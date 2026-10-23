@@ -160,7 +160,13 @@ export function TrendChart({ series }: { series: TrendSeries[] }) {
               tickLine={false}
               interval="preserveStartEnd"
             />
-            <YAxis tick={{ fill: INK.axis, fontSize: 11 }} axisLine={false} tickLine={false} width={48} />
+            <YAxis
+              tick={{ fill: INK.axis, fontSize: 11 }}
+              axisLine={false}
+              tickLine={false}
+              width={48}
+              domain={[(min: number) => Math.max(0, Math.floor((min * 0.8) / 10) * 10), (max: number) => Math.ceil((max * 1.1) / 10) * 10]}
+            />
             <ReferenceLine
               y={avg12}
               stroke="#898781"
@@ -182,7 +188,7 @@ export function TrendChart({ series }: { series: TrendSeries[] }) {
                 );
               }}
             />
-            <Line type="monotone" dataKey="units" stroke={SERIES} strokeWidth={2} dot={false} activeDot={{ r: 4, stroke: "#fff", strokeWidth: 2 }} />
+            <Line isAnimationActive={false} type="monotone" dataKey="units" stroke={SERIES} strokeWidth={2} dot={false} activeDot={{ r: 4, stroke: "#fff", strokeWidth: 2 }} />
           </LineChart>
         </ResponsiveContainer>
       </div>

@@ -56,7 +56,7 @@ export default function AboutPage() {
         subtitle="Deepa’s 90-day mandate: ₹15 lakhs, no AI team, something running by Q1. Three candidate areas, one build."
       />
 
-      <section className="card overflow-x-auto">
+      <section className="card relative overflow-x-auto">
         <div className="border-b border-line px-4 py-3 sm:px-5">
           <h2 className="text-sm font-semibold">Pre-build checks across the three briefs</h2>
           <p className="text-xs text-muted">✓ passes · – partial · ✕ fails</p>

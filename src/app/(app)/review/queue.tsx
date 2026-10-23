@@ -103,7 +103,7 @@ function Row({ rec }: { rec: RecommendationRow }) {
           </p>
           {!isPause && !locked && rec.status !== "rejected" && (
             <label className="flex items-center gap-2 text-sm">
-              <span className="w-16 text-ink-2">Order qty</span>
+              <span className="shrink-0 whitespace-nowrap text-ink-2">Order qty</span>
               <input
                 type="number"
                 min={1}
@@ -197,7 +197,7 @@ export function ReviewQueue({ runId, recs }: { runId: string; recs: Recommendati
               role="tab"
               aria-selected={tab === t}
               onClick={() => setTab(t)}
-              className={`flex-1 whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ${tab === t ? "bg-white shadow-sm" : "text-ink-2 hover:text-ink"}`}
+              className={`flex-1 whitespace-nowrap rounded-md px-2 py-1.5 text-[13px] font-medium sm:px-3 sm:text-sm ${tab === t ? "bg-white shadow-sm" : "text-ink-2 hover:text-ink"}`}
             >
               {t === "review" ? "Needs review" : t === "approved" ? "Approved" : "All SKUs"}{" "}
               <span className="tabular text-muted">{counts[t]}</span>
